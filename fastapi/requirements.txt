@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+sqlitecloud
+pydantic-ai
+selenium
+beautifulsoup4
+webdriver-manager
+requests
+itsdangerous

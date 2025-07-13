@@ -16,6 +16,8 @@ venv.bak/
 # Node binary files
 *.node
 
+node_modules/
+
 # OS files
 Thumbs.db
 .DS_Store

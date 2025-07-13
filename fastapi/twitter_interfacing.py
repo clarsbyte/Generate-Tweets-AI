@@ -6,15 +6,16 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, ElementClickInterceptedException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 import json
 
 class GetTweets:
-    PATH = 'chromedriver.exe'
+
     
     def __init__(self, username):
         self.username = username.lower()
-        self.service = Service(self.PATH)
+        #self.service = Service(self.PATH)
         self.target_url = f'https://nitter.net/{self.username}'
         self.collected_tweets = [] 
         self.processed_tweet_ids = set()  
@@ -40,7 +41,7 @@ class GetTweets:
         
         chrome_options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
         
-        self.driver = webdriver.Chrome(service=self.service, options=chrome_options)
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
         
         self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 

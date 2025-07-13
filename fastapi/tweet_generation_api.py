@@ -6,12 +6,20 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 import json
 import sqlite3
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+secret_key = os.getenv('SECRET_KEY')
+
 
 
 app = FastAPI()
 
 origins = [
     "http://localhost:3000",
+    "https://tweetgenerator-clarsbyte-clarsbytes-projects.vercel.app"
 ]
 
 app.add_middleware(
@@ -21,7 +29,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(SessionMiddleware, secret_key="clarissassecrethahaha")
+app.add_middleware(SessionMiddleware, secret_key=secret_key)
 
 def init_db():
     conn = sqlite3.connect('tweets.db')
@@ -67,6 +75,11 @@ def get_latest_tweets():
     if result: 
         return json.loads(result[0])  
     return []
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

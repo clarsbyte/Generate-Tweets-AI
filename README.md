@@ -6,9 +6,8 @@ https://github.com/user-attachments/assets/765db97d-29ce-45c3-b2de-bd0d326000e5
 ## ✨ Features
 
 - **Style Analysis**: Analyzes grammar, punctuation, capitalization, and personality from reference tweets
-- **Topic Flexibility**: Generate tweets about any topic while preserving writing style
+- **Topic Flexibility**: Generate tweets about any topic while preserving writing style and copy the ones you like right away
 - **AI-Powered**: Uses Google's Gemini AI for intelligent tweet generation
-- **Web Scraping**: Automatically fetches user tweets for style analysis
 - **Modern UI**: Clean, responsive interface built with Next.js
 - **RESTful API**: FastAPI backend with automatic documentation
 

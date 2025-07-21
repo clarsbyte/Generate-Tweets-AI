@@ -54,7 +54,7 @@ cd fastapi
 docker build -t tweetgenapi .
 
 # Run the container
-docker run -d -p 8000:8000 --name tweet-backend tweetgenapi
+docker run -p 8000:8000 tweetgenapi
 ```
 
 ### 4. Frontend Setup (Next.js)

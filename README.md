@@ -19,6 +19,7 @@ https://github.com/user-attachments/assets/765db97d-29ce-45c3-b2de-bd0d326000e5
 | **Backend** | FastAPI, Python |
 | **AI Model** | Google Gemini 2.5 Flash |
 | **Agent** | Pydantic |
+| **Tool** | BeautifulSoup 4 | 
 | **Containerization** | Docker |
 
 ## 📋 Prerequisites
